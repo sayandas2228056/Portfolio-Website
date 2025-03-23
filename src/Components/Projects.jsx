@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { FaGithub, FaCheckCircle, FaSpinner, FaMoon, FaSun } from "react-icons/fa";
 
+// Projects List (Ensure this order remains intact)
 const projects = [
   {
     title: "Real-time Chat Application",
@@ -58,14 +59,19 @@ const Projects = () => {
   const [theme, setTheme] = useState("light");
   const [filter, setFilter] = useState("All");
 
+  // Toggle theme function
   const toggleTheme = () => setTheme(theme === "light" ? "dark" : "light");
 
+  // Filter projects while maintaining the original order
   const filteredProjects =
-    filter === "All" ? projects : projects.filter((p) => p.status === filter);
+    filter === "All"
+      ? [...projects]
+      : projects.filter((p) => p.status === filter).sort((a, b) => projects.indexOf(a) - projects.indexOf(b));
 
   return (
     <section className={`${theme === "dark" ? "dark" : ""} py-20 px-6 md:px-16 lg:px-24`}>
       <div className="max-w-7xl mx-auto">
+        
         {/* Theme Toggle */}
         <div className="flex justify-end mb-6">
           <button
@@ -87,7 +93,7 @@ const Projects = () => {
           </p>
         </div>
 
-        {/* Filter */}
+        {/* Filter Buttons */}
         <div className="flex justify-center mb-6">
           {["All", "Completed", "Work in Progress"].map((status) => (
             <button
