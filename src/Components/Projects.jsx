@@ -46,7 +46,7 @@ const projects = [
     description: "A serverless function load balancer using AWS Lambda, API Gateway, DynamoDB, and a weighted routing algorithm.",
     technologies: "AWS Lambda, API Gateway, DynamoDB, Python, Node.js",
     status: "Work in Progress",
-    repo: "https://github.com/sayandas2228056/ACO-Optimised-Load-Balancer-for-Cloud-Computing-.git",
+    repo: "https://github.com/sayandas2228056/ACO-Optimised-Load-Balancer-for-Cloud-Computing",
   },
   {
     title: "Job Portal",
