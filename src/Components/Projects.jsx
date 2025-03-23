@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { FaGithub, FaCheckCircle, FaSpinner } from "react-icons/fa";
 
 const projects = [
-  // Completed Projects
   {
     title: "Weather App",
     description: "A simple weather application that provides current weather information based on user location.",
@@ -39,12 +38,10 @@ const projects = [
     status: "Completed",
     repo: "https://github.com/sayandas2228056/CouponGenerator",
   },
-
-  // Work-in-Progress Projects
   {
-    title: "Optimised Ant-Coloney for Load Balancing",
+    title: "Optimised Ant-Colony for Load Balancing",
     description: "A serverless function load balancer using AWS Lambda, API Gateway, DynamoDB, and a weighted routing algorithm.",
-    technologies: "Node.js,REST Api, Express.js,",
+    technologies: "Node.js, REST API, Express.js",
     status: "Completed",
     repo: "https://github.com/sayandas2228056/ACO-Optimised-Load-Balancer-for-Cloud-Computing",
   },
@@ -65,15 +62,12 @@ const projects = [
 ];
 
 const Projects = () => {
-  // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
+      transition: { staggerChildren: 0.1 },
+    },
   };
 
   const itemVariants = {
@@ -81,30 +75,24 @@ const Projects = () => {
     visible: {
       y: 0,
       opacity: 1,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-        damping: 12
-      }
-    }
+      transition: { type: "spring", stiffness: 100, damping: 12 },
+    },
   };
 
   return (
     <section className="py-20 px-6 md:px-16 lg:px-24 bg-transparent">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800 dark:text-white">
-            <span className="relative inline-block">
-              <span className="relative z-10">Portfolio Projects</span>
-              <span className="absolute bottom-1 left-0 w-full h-3 bg-indigo-100 dark:bg-indigo-900/30 -z-10 rounded"></span>
-            </span>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800 dark:text-white relative inline-block">
+            Portfolio Projects
+            <span className="absolute bottom-1 left-0 w-full h-3 bg-indigo-100 dark:bg-indigo-900/30 -z-10 rounded"></span>
           </h2>
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
             A collection of projects demonstrating my technical expertise and problem-solving capabilities.
           </p>
         </div>
 
-        <motion.div 
+        <motion.div
           className="grid gap-6 md:gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
           variants={containerVariants}
           initial="hidden"
@@ -129,34 +117,21 @@ const Projects = () => {
                     <FaGithub className="text-xl" />
                   </a>
                 </div>
-                
-                <p className="text-gray-700 dark:text-gray-300 text-sm mb-4 line-clamp-3">
+                <p className="text-gray-700 dark:text-gray-300 text-sm mb-4">
                   {project.description}
                 </p>
-                
                 <div className="pt-4 border-t border-gray-200/30 dark:border-gray-700/30">
                   <div className="flex items-center mb-2">
                     <span className="text-gray-700 dark:text-gray-300 text-sm font-medium mr-2">Technologies:</span>
                     <span className="text-gray-600 dark:text-gray-400 text-sm">{project.technologies}</span>
                   </div>
-                  
                   <div className="flex items-center">
                     <span className="text-gray-700 dark:text-gray-300 text-sm font-medium mr-2">Status:</span>
-                    <span className={`text-sm flex items-center ${
-                      project.status === "Completed" 
-                        ? "text-green-600 dark:text-green-400" 
-                        : "text-amber-600 dark:text-amber-400"
-                    }`}>
+                    <span className={`text-sm flex items-center ${project.status === "Completed" ? "text-green-600 dark:text-green-400" : "text-amber-600 dark:text-amber-400"}`}>
                       {project.status === "Completed" ? (
-                        <>
-                          <FaCheckCircle className="mr-1" />
-                          Completed
-                        </>
+                        <><FaCheckCircle className="mr-1" /> Completed</>
                       ) : (
-                        <>
-                          <FaSpinner className="mr-1 animate-spin" />
-                          In Progress
-                        </>
+                        <><FaSpinner className="mr-1 animate-spin" /> In Progress</>
                       )}
                     </span>
                   </div>
