@@ -42,10 +42,10 @@ const projects = [
 
   // Work-in-Progress Projects
   {
-    title: "AWS Load Balancing Model",
+    title: "Optimised Ant-Coloney for Load Balancing",
     description: "A serverless function load balancer using AWS Lambda, API Gateway, DynamoDB, and a weighted routing algorithm.",
-    technologies: "AWS Lambda, API Gateway, DynamoDB, Python, Node.js",
-    status: "Work in Progress",
+    technologies: "Node.js,REST Api, Express.js,",
+    status: "Completed",
     repo: "https://github.com/sayandas2228056/ACO-Optimised-Load-Balancer-for-Cloud-Computing",
   },
   {
